@@ -34,3 +34,4 @@ elif page == "Read":
                 break
         else:
             st.markdown(line.decode('utf-8'))
+            time.sleep(0.5)
