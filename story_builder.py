@@ -31,4 +31,3 @@ elif page == "Read":
                 st.success("Well done!")
         else:
             st.markdown(line.decode('utf-8'))
-            time.sleep(2)
