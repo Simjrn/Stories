@@ -30,5 +30,7 @@ elif page == "Read":
             answer = st.text_input(f"What is: {words[0]}")
             if answer == words[1]:
                 st.success("Well done!")
+            else:
+                break
         else:
             st.markdown(line.decode('utf-8'))
