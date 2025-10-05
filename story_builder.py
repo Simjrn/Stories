@@ -23,7 +23,7 @@ if page == "Make":
 elif page == "Read":
     st.markdown("#### The error message goes away once you upload a file")
     book = st.file_uploader("upload story", type='txt', accept_multiple_files=False)
-    with st.form("")
+    with st.form(""):
         for line in book:
             if line[0:13] == b'<writeAnswer>':
                 words = line[13:].decode('utf-8').split()
