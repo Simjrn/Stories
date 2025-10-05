@@ -32,6 +32,9 @@ elif page == "Read":
                     st.success("Well done!")
                 else:
                     break
+            submitted = st.form_submit_button("Finished!")
+            if submitted:
+                st.succes(f"Well done for finishing {name}")
             else:
                st.markdown(line.decode('utf-8'))
                time.sleep(0.5)
