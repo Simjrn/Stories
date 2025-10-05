@@ -25,7 +25,7 @@ elif page == "Read":
     book = st.file_uploader("upload story", type='txt', accept_multiple_files=False)
     for line in book:
         if line[0:13] == b'<writeAnswer>':
-             words = line[13:].decode('utf-8').split()
+            words = line[13:].decode('utf-8').split()
             answer = st.text_input(f"What is: {words[0]}")
             if answer == words[1]:
                 st.success("Well done!")                
