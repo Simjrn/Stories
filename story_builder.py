@@ -21,7 +21,6 @@ if page == "Make":
         mime="text/plain"
     )
 elif page == "Read":
-    st.markdown("#### The error message goes away once you upload a file")
     book = st.file_uploader("upload story", type='txt', accept_multiple_files=False)
     if book:
         for line in book:
