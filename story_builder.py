@@ -37,4 +37,4 @@ elif page == "Read":
                time.sleep(0.5)
         submitted = st.form_submit_button("Finished!")
         if submitted:
-            st.succes(f"Well done for finishing {name}")
+            st.success(f"Well done for finishing {name}")
