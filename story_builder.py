@@ -17,7 +17,7 @@ if page == "Make":
         st.download_button(
         label="Download Story",
         data=text,
-        file_name=f"{lang}_{name.replace(' ', '_')}.txt",
+        file_name=f"{lang}_{name[2:].replace(' ', '_')}.txt",
         mime="text/plain"
     )
 elif page == "Read":
