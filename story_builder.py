@@ -23,18 +23,13 @@ if page == "Make":
 elif page == "Read":
     st.markdown("#### The error message goes away once you upload a file")
     book = st.file_uploader("upload story", type='txt', accept_multiple_files=False)
-    with st.form(""):
-        for line in book:
-            if line[0:13] == b'<writeAnswer>':
-                words = line[13:].decode('utf-8').split()
-                answer = st.text_input(f"What is: {words[0]}")
-                if answer == words[1]:
-                    st.success("Well done!")
-                else:
-                    break
+    for line in book:
+        if line[0:13] == b'<writeAnswer>':
+             words = line[13:].decode('utf-8').split()
+            answer = st.text_input(f"What is: {words[0]}")
+            if answer == words[1]:
+                st.success("Well done!")                
             else:
-               st.markdown(line.decode('utf-8'))
-               time.sleep(0.5)
-        submitted = st.form_submit_button("Finished!")
-        if submitted:
-            st.success(f"Well done for finishing {name}")
+                break
+        else:
+            st.markdown(line.decode('utf-8'))
