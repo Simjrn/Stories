@@ -50,7 +50,7 @@ elif page == "Read":
                 line = line.decode('utf-8')
                 pos = line.find("|")
                 term = line[11:pos]
-                tran = line[pos:]
+                tran = line[pos+1:]
                 answer = st.text_area(f"What is: {term}")
                 if answer == tran:
                     st.success("Well done!")                
