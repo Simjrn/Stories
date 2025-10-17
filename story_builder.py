@@ -35,5 +35,16 @@ elif page == "Read":
                         break
                     else:
                         break
+            elif line[0:13] == b'<writeTran>':
+                words = line[13:].decode('utf-8').split()
+                answer = st.text_input(f"What does '{words[0]}; mean?")
+                if answer == words[1]:
+                    st.success("Well done!")                
+                else:
+                    if answer:
+                        st.error(f"No, try {words[1]}")
+                        break
+                    else:
+                        break
             else:
                 st.markdown(line.decode('utf-8'))
