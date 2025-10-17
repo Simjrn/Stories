@@ -32,6 +32,7 @@ elif page == "Read":
                 else:
                     if answer:
                         st.error(f"No, try {words[1]}")
+                        break
                     else:
                         break
             else:
