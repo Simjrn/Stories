@@ -36,7 +36,6 @@ elif page == "Read":
                     else:
                         break
             elif line[0:11] == b'<writeTran>':
-                st.write("yyyy")
                 words = line[11:].decode('utf-8').split()
                 answer = st.text_input(f"What does '{words[0]}' mean?")
                 if answer == words[1]:
@@ -44,6 +43,20 @@ elif page == "Read":
                 else:
                     if answer:
                         st.error(f"No, try {words[1]}")
+                        break
+                    else:
+                        break
+            elif line[0:13] == b'<tranSent>':
+                line = line.decode('utf-8')
+                pos = line.find("|")
+                term = line[11:pos]
+                tran = line[pos:]
+                answer = st.text_area(f"What is: {term}")
+                if answer == tran:
+                    st.success("Well done!")                
+                else:
+                    if answer:
+                        st.error(f"No, try {term}")
                         break
                     else:
                         break
