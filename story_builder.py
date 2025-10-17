@@ -46,7 +46,7 @@ elif page == "Read":
                         break
                     else:
                         break
-            elif line[0:11] == b'<tranSent>':
+            elif line[0:10] == b'<tranSent>':
                 line = line.decode('utf-8')
                 pos = line.find("|")
                 term = line[11:pos]
