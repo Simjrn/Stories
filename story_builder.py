@@ -35,7 +35,7 @@ elif page == "Read":
                         break
                     else:
                         break
-            elif line[0:13] == b'<writeTran>':
+            elif line[0:11] == b'<writeTran>':
                 st.write("yyyy")
                 words = line[13:].decode('utf-8').split()
                 answer = st.text_input(f"What does '{words[0]}' mean?")
