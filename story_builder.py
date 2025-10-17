@@ -30,6 +30,9 @@ elif page == "Read":
                 if answer == words[1]:
                     st.success("Well done!")                
                 else:
-                    break
+                    if answer:
+                        st.error(f"No, try {words[1]}")
+                    else:
+                        break
             else:
                 st.markdown(line.decode('utf-8'))
