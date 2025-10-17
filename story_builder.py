@@ -56,7 +56,7 @@ elif page == "Read":
                     st.success("Well done!")                
                 else:
                     if answer:
-                        st.error(f"No, try {term}")
+                        st.error(f"No, try {tran}")
                         break
                     else:
                         break
